@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.test.databinding.ActivityButtomNavBinding
 
-class ButtomNavActivity : AppCompatActivity() {
+class BottomNavActivity : AppCompatActivity() {
 
 private lateinit var binding: ActivityButtomNavBinding
 

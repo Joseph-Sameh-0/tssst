@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.test.BottomNavActivity
 import com.example.tssst.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         binding.button.setOnClickListener {
-            val intent = Intent(this, com.example.test.ButtomNavActivity::class.java)
+            val intent = Intent(this, BottomNavActivity::class.java)
             startActivity(intent)
             finish()
         }
