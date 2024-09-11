@@ -1,6 +1,5 @@
-package com.example.tssst
+package com.example.test
 
-import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,35 +7,26 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.tssst.databinding.ActivityMainBinding
+import com.example.test.databinding.ActivityButtomNavBinding
 
-class MainActivity : AppCompatActivity() {
+class ButtomNavActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+private lateinit var binding: ActivityButtomNavBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+     binding = ActivityButtomNavBinding.inflate(layoutInflater)
+     setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        val navController = findNavController(R.id.nav_host_fragment_activity_buttom_nav)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        binding.button.setOnClickListener {
-            val intent = Intent(this, com.example.test.ButtomNavActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
     }
 }
